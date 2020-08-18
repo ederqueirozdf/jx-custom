@@ -9,4 +9,4 @@ build:
     envTemplate:
       template: '{{.DOCKER_REGISTRY}}/{{.IMAGE_NAME}}:{{.VERSION}}'
   local: {}
-    useDockerCLI: true
+  #  useDockerCLI: true
