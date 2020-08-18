@@ -1,6 +1,6 @@
 pipeline {
   agent {
-    label "jenkins-jx-base"
+    label "jenkins-python"
   }
   environment {
     ORG = 'ederqueirozdf'
@@ -13,9 +13,8 @@ pipeline {
       when {
         branch 'master'
       }
-}
       steps {
-        container('jx-base') {
+        container('python') {
 
           // ensure we're not on a detached head
           sh "git checkout master"
@@ -24,6 +23,7 @@ pipeline {
           sh "echo \$(jx-release-version) > VERSION"
           sh "jx step tag --version \$(cat VERSION)"
           sh "export VERSION=`cat VERSION` && skaffold build -f skaffold.yaml"
+	 }
         }
       }
     }
