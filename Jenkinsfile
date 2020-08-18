@@ -13,6 +13,7 @@ pipeline {
       when {
         branch 'master'
       }
+}
       steps {
         container('jx-base') {
 
@@ -31,5 +32,4 @@ pipeline {
           cleanWs()
         }
   }
-}
 }
