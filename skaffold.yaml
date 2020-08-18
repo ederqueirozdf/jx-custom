@@ -1,0 +1,12 @@
+apiVersion: skaffold/v1beta2
+kind: Config
+build:
+  artifacts:
+  - image: erudite-buckeye-278418/jenkinsx-custom
+    context: .
+    docker: {}
+  tagPolicy:
+    envTemplate:
+      template: '{{.DOCKER_REGISTRY}}/{{.IMAGE_NAME}}:{{.VERSION}}'
+  local: {}
+    useDockerCLI: true
