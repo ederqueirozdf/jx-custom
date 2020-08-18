@@ -1,0 +1,6 @@
+.updatebot-repos
+myvalues.yaml
+
+# idea
+.idea
+*.iml
